@@ -293,219 +293,220 @@ font-family: 'Poppins', sans-serif;
       .control-btn{
         font-size: 0.7rem!important;
       }
-      .equation-display{
-        font-size: 1rem!important;
-      }
+
       .section h2 {
         font-size: 1.5rem;
       }
     }
-  /* Base Styles */
-  /* Base Styles */
   :root {
-    --primary: #6366f1;
-    --accent: #f472b6;
-    --textvisual: #e2e8f0;
-    --bg-dark: #0f172a;
-  }
-  
-  .diff-eq-container {
-    width: 700px;
-    height: 500px;
-    position: relative;
-    border-radius: 12px;
-background: rgb(15 23 42 / 86%);
-      box-shadow: 0 0 50px rgba(127, 0, 255, 0.3);
-    overflow: hidden;
-  }
-  
-  .math-universe {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-  
-  /* Coordinate System */
-  .coordinate-system {
-    position: absolute;
-    width: 80%;
-    height: 60%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .grid-lines {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      linear-gradient(to right, rgba(226, 232, 240, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(226, 232, 240, 0.05) 1px, transparent 1px);
-    background-size: 10% 10%;
-  }
-  
-  .x-axis, .y-axis {
-    position: absolute;
-    background-color: rgba(226, 232, 240, 0.3);
-  }
-  
-  .x-axis {
-    width: 100%;
-    height: 1px;
-    bottom: 50%;
-  }
-  
-  .y-axis {
-    width: 1px;
-    height: 100%;
-    left: 50%;
-  }
-  
-  /* Slope Field */
-  .slope-field {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      repeating-linear-gradient(to right, transparent 0 9%, rgba(255,255,255,0.02) 10%),
-      repeating-linear-gradient(to bottom, transparent 0 9%, rgba(255,255,255,0.02) 10%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .show-slope .slope-field {
-    opacity: 1;
-  }
-  
-  /* Solution Curves */
-  .solution-curves {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-  
-  .curve {
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .c1 { stroke: #a5b4fc; }
-  .c2 { stroke: #86efac; }
-  .c3 { stroke: #f472b6; }
-  
-  .show-solutions .curve {
-    opacity: 0.8;
-    animation: draw 4s linear forwards;
-  }
-  
-  /* Particle */
-  .particle-system {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    animation: particleMove 5s infinite linear;
-  }
-  
-  .particle-core {
-    width: 100%;
-    height: 100%;
-    background: #86efac;
-    border-radius: 50%;
-    box-shadow: 0 0 8px #86efac;
-  }
-  
-  /* Equation Display */
-  .equation-display {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.8rem;
-    color: white;
-    background: rgba(15, 23, 42, 0.7);
-    padding: 0.5rem 1.2rem;
-    border-radius: 30px;
-    border: 1px solid rgba(226, 232, 240, 0.1);
-    white-space: nowrap;
-  }
-  
-  .dy, .dx { color: #a5b4fc; }
-  .slash, .equals { color: rgba(226, 232, 240, 0.7); }
-  .function { color: #f472b6; }
-  
-  /* Initial Condition */
-  .initial-condition {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    color: white;
-    background: rgba(15, 23, 42, 0.7);
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    border: 1px solid rgba(226, 232, 240, 0.1);
-  }
-  
-  .x-value { color: #f472b6; }
-  .y-value { color: #86efac; }
-  
-  /* Control Panel */
-  .control-panel {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    background: rgba(15, 23, 42, 0.7);
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    border: 1px solid rgba(226, 232, 240, 0.1);
-    margin: auto;
-    justify-content: center;
-  }
-  
-  .control-btn {
-    padding: 0.4rem 0.8rem;
-    background: rgba(99, 102, 241, 0.2);
-    color: var(--textvisual);
-    border: 1px solid var(--primary);
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    min-width: 80px;
-    transition: all 0.2s ease;
-  }
-  
-  .control-btn:hover {
-    background: rgba(99, 102, 241, 0.3);
-  }
-  
-  /* Animations */
-  @keyframes draw {
-    to { stroke-dashoffset: 0; }
-  }
-  
-  @keyframes particleMove {
-    0% { left: 10%; top: 50%; }
-    25% { left: 30%; top: 30%; }
-    50% { left: 50%; top: 50%; }
-    75% { left: 70%; top: 40%; }
-    100% { left: 90%; top: 50%; }
-  }
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --secondary: #4f46e5;
+            --accent-pink: #f472b6;
+            --accent-green: #86efac;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --card-bg: rgb(15 23 42 / 85%);
+            --text: #e2e8f0;
+        }
+
+
+
+        .series-animation {
+            width: 90%;
+            max-width: 900px;
+            height: 500px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            margin: 2rem auto;
+            box-shadow: 
+                0 0 30px rgba(99, 102, 241, 0.2),
+                0 0 60px rgba(79, 70, 229, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .math-visual {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        /* 3D Graph System */
+        .graph-container {
+            position: absolute;
+            width: 80%;
+            height: 70%;
+            bottom: 15%;
+            left: 10%;
+            transform-style: preserve-3d;
+            perspective: 800px;
+        }
+
+        .axis {
+            position: absolute;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.1), 
+                transparent);
+        }
+
+        .x-axis {
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            transform: rotateX(15deg);
+            box-shadow: 0 0 8px rgba(255,255,255,0.1);
+        }
+
+        .y-axis {
+            width: 1px;
+            height: 100%;
+            left: 0;
+            transform: rotateY(-15deg);
+            box-shadow: 0 0 8px rgba(255,255,255,0.1);
+        }
+
+        /* Animated Series Terms */
+        .term {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--light);
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            box-shadow: 
+                0 5px 15px rgba(99, 102, 241, 0.5),
+                inset 0 1px 1px rgba(255,255,255,0.2);
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            animation: termFloat 5s infinite ease-in-out;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @keyframes termFloat {
+            0%, 100% { transform: translateY(0) rotateX(0) scale(1); }
+            50% { transform: translateY(-25px) rotateX(10deg) scale(1.05); }
+        }
+
+        /* Convergence Visualization */
+        .limit-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+            width: 0;
+            top: 30%;
+            left: 10%;
+            transform: rotate(-3deg);
+            animation: drawLimitLine 3.5s forwards 1s;
+            box-shadow: 0 0 15px var(--accent-green);
+            z-index: 10;
+        }
+
+        @keyframes drawLimitLine {
+            to { width: 80%; }
+        }
+
+        /* Equation Display */
+        .equation-display {
+            position: absolute;
+            bottom: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Times New Roman', serif;
+            font-size: 2rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(2, 6, 23, 0.6);
+            padding: 15px 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .sigma {
+            font-size: 2.5rem;
+            color: var(--primary-light);
+        }
+
+        .term-formula {
+            color: var(--text);
+            position: relative;
+        }
+
+        .term-formula::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-pink);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: underlineTerm 6s infinite;
+        }
+
+        @keyframes underlineTerm {
+            0%, 100% { transform: scaleX(0); }
+            50% { transform: scaleX(1); }
+        }
+
+        .equals {
+            margin: 0 0.3rem;
+        }
+
+        .result {
+            color: var(--accent-green);
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            text-shadow: 0 0 10px rgba(134, 239, 172, 0.5);
+        }
+
+        .infinity {
+            color: var(--primary-light);
+            font-style: italic;
+            animation: float 4s infinite ease-in-out;
+        }
+
+    
+        /* Responsive */
+        @media (max-width: 768px) {
+            .series-animation {
+                height: 400px;
+            }
+
+/*            .graph-container{
+              position: static;
+            }*/
+            
+            .equation-display {
+                font-size: 0.9rem;
+                padding: 12px 20px;
+                bottom: 5%;
+            }
+            
+            .term {
+                width: 40px;
+                height: 40px;
+                font-size: 0.8rem;
+            }
+
+            .graph-container{
+              height: 100%;
+            }
+        }
   </style>
 </head>
 <body>
@@ -540,46 +541,30 @@ background: rgb(15 23 42 / 86%);
 
   <h1 class="margin-top-70" data-aos="fade" data-aos-delay="50">BAB III: Barisan dan Deret Tak Hingga</h1>
   <div class="flex-center">
-<div class="diff-eq-container">
-  <div class="math-universe">
-    <!-- Simplified Coordinate System -->
-    <div class="coordinate-system">
-      <div class="grid-lines"></div>
-      <div class="x-axis"></div>
-      <div class="y-axis"></div>
+  <div class="series-animation">
+        <div class="math-visual">
+            <!-- 3D Graph System -->
+            <div class="graph-container">
+                <div class="axis x-axis"></div>
+                <div class="axis y-axis"></div>
+                
+                <!-- Terms will be inserted here by JavaScript -->
+                <div id="terms-container"></div>
+                
+                <!-- Convergence Line -->
+                <div class="limit-line"></div>
+            </div>
+            
+            <!-- Equation Display -->
+            <div class="equation-display">
+                <span class="sigma">∑</span>
+                <span class="term-formula">1/n²</span>
+                <span class="equals">=</span>
+                <span class="result">π²/6</span>
+                <span class="infinity">(n → ∞)</span>
+            </div>
+        </div>
     </div>
-    
-    <!-- Slope Field -->
-    <div class="slope-field"></div>
-    
-    <!-- Solution Curves -->
-    <svg class="solution-curves" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <path class="curve c1" d="M0,50 Q25,30 50,35 T100,30"></path>
-      <path class="curve c2" d="M0,60 Q25,40 50,45 T100,40"></path>
-      <path class="curve c3" d="M0,40 Q25,20 50,25 T100,20"></path>
-    </svg>
-    
-    <!-- Particle -->
-    <div class="particle-system">
-      <div class="particle-core"></div>
-    </div>
-    
-    <!-- Equation Display -->
-    <div class="equation-display">
-      <span class="dy">dy</span><span class="slash">/</span><span class="dx">dx</span>
-      <span class="equals"> = </span>
-      <span class="function">x - y</span>
-    </div>
-    
-    <!-- Initial Condition -->
-    <div class="initial-condition">
-      y(<span class="x-value">0</span>) = <span class="y-value">C</span>
-    </div>
-    
-    <!-- Compact Controls -->
-
-  </div>
-</div>
 
 </div>
     </div>
@@ -1330,43 +1315,82 @@ background: rgb(15 23 42 / 86%);
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script>
-  // Initialize
-  document.addEventListener('DOMContentLoaded', function() {
-    const container = document.querySelector('.math-universe');
-    const toggleSlopeBtn = document.getElementById('toggleSlope');
-    const toggleSolutionsBtn = document.getElementById('toggleSolutions');
-    const playPauseBtn = document.getElementById('playPause');
-    const particle = document.querySelector('.particle-system');
-    
-    // Start with solutions visible
-    container.classList.add('show-solutions');
-    toggleSolutionsBtn.textContent = 'Hide Solutions';
-    
-    // Toggle slope field
-    toggleSlopeBtn.addEventListener('click', function() {
-      container.classList.toggle('show-slope');
-      this.textContent = container.classList.contains('show-slope') 
-        ? 'Hide Slope' 
-        : 'Show Slope';
-    });
-    
-    // Toggle solutions
-    toggleSolutionsBtn.addEventListener('click', function() {
-      container.classList.toggle('show-solutions');
-      this.textContent = container.classList.contains('show-solutions') 
-        ? 'Hide Solutions' 
-        : 'Show Solutions';
-    });
-    
-    // Play/pause animation
-    let isPlaying = true;
-    playPauseBtn.addEventListener('click', function() {
-      isPlaying = !isPlaying;
-      this.textContent = isPlaying ? '❚❚ Pause' : '▶ Play';
-      particle.style.animationPlayState = isPlaying ? 'running' : 'paused';
-    });
-  });
-</script>
+    // Create animated terms
+        const container = document.getElementById('terms-container');
+        const termCount = 10;
+        const colors = [
+            'var(--primary)',
+            'var(--secondary)',
+            'var(--accent-pink)',
+            'var(--primary-light)'
+        ];
+        
+        // Create terms
+        for (let i = 1; i <= termCount; i++) {
+            const term = document.createElement('div');
+            term.className = 'term';
+            term.textContent = `1/${i}²`;
+            term.style.left = `${5 + (i-1) * 9}%`;
+            term.style.bottom = `${10 + i * 4}%`;
+            term.style.animationDelay = `${i * 0.2}s`;
+            term.style.background = colors[i % colors.length];
+            term.style.zIndex = termCount - i;
+            
+            // Make terms progressively smaller
+            const scale = 1 - (i * 0.06);
+            term.style.transform = `scale(${scale})`;
+            
+            container.appendChild(term);
+            
+            // Add floating particles for every other term
+            if (i % 2 === 0) {
+                createParticles(term);
+            }
+        }
+        
+        // Create floating math particles
+        function createParticles(parentTerm) {
+            const particleCount = 5;
+            const rect = parentTerm.getBoundingClientRect();
+            const centerX = rect.left + rect.width/2;
+            const centerY = rect.top + rect.height/2;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'math-particle';
+                
+                // Random properties
+                const size = Math.random() * 8 + 4;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 3 + 6;
+                const left = centerX + (Math.random() * 40 - 20);
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}px`;
+                particle.style.top = `${centerY}px`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.background = color;
+                
+                document.body.appendChild(particle);
+            }
+        }
+        
+        // Animate term highlighting
+        const terms = document.querySelectorAll('.term');
+        setInterval(() => {
+            terms.forEach(term => {
+                term.style.boxShadow = '0 5px 15px rgba(99, 102, 241, 0.5)';
+            });
+            
+            const randomTerm = terms[Math.floor(Math.random() * terms.length)];
+            randomTerm.style.boxShadow = 
+                '0 0 20px rgba(244, 114, 182, 0.8), 0 5px 25px rgba(99, 102, 241, 0.6)';
+                
+        }, 1000);
+    </script>
 <footer class="footer">
     <div class="footer-content">
         <div class="footer-logo font">
